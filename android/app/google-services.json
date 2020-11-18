@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "959213582091",
+    "firebase_url": "https://resto-7e779.firebaseio.com",
+    "project_id": "resto-7e779",
+    "storage_bucket": "resto-7e779.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959213582091:android:0227ef1ee1d5fbc549d40e",
+        "android_client_info": {
+          "package_name": "com.mwone.restoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959213582091-a51cmftsslfcghgchgj3mjkc23ae6pep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAumJ4Im3Hp3gT68VL5a79Zmi59onrxRck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959213582091-a51cmftsslfcghgchgj3mjkc23ae6pep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

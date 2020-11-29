@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:restoapp/home.dart';
 import 'package:restoapp/providers/app_provider.dart';
-import 'package:restoapp/screens/splash.dart';
 import 'util/const.dart';
 
 void main() async {
@@ -14,6 +14,7 @@ void main() async {
         ChangeNotifierProvider(create: (_) => AppProvider()),
       ],
       child: MyApp(),
+      
     ),
   );
 }
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           title: Constants.appName,
           theme: appProvider.theme,
           darkTheme: Constants.darkTheme,
-          home: SplashScreen(),
+          home: Home(),
         );
       },
     );

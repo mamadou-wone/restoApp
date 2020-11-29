@@ -17,7 +17,7 @@ class _HomeState extends State<Home> {
           onPressed: () {
             firestoreIntance.collection('resto').get().then((querySnapshot) {
               querySnapshot.docs.forEach((element) {
-                print(element.data());
+                print(element["name"]);
               });
             });
           },

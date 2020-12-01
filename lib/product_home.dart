@@ -12,12 +12,9 @@ class _ProductHomePageState extends State<ProductHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("bonCoin")),
-      body: ListView.builder(
-        itemCount: productList.length,
-        itemBuilder: (BuildContext context, int index){
-          
-        }
+      appBar: AppBar(
+        title: Text("bonCoin"),
+        centerTitle: true,
       ),
     );
   }

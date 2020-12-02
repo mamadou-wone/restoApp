@@ -90,13 +90,13 @@ class _HomeState extends State<Home> {
                     backgroundColor: Colors.teal,
                   ),
                   GButton(
-                    icon: LineIcons.heart_o,
-                    text: 'Favorie',
+                    icon: Icons.favorite,
+                    text: 'Hot',
                     backgroundColor: Colors.red,
                   ),
                   GButton(
-                    icon: LineIcons.user,
-                    text: 'Compte',
+                    icon: Icons.settings,
+                    text: 'Settings',
                     backgroundColor: Color(0xfffbb448),
                   ),
                 ],
@@ -109,20 +109,6 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      // Static Day
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.indigo[900],
-      //   child: Icon(Icons.add),
-      //   elevation: 10.0,
-      //   splashColor: Colors.indigo[700],
-      //   onPressed: () {
-      //     Navigator.of(context).push(
-      //       MaterialPageRoute(
-      //         builder: (context) => null,
-      //       ),
-      //     );
-      //   },
-      // ),
     );
   }
 }

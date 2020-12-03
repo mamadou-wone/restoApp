@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:restoapp/pages/favories.dart';
 import 'package:restoapp/pages/product_page.dart';
 import 'package:restoapp/pages/setting_screen.dart';
@@ -53,13 +52,14 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
+        backgroundColor: Colors.orange[400],
         title: Text(
           'BonCoin',
           style: TextStyle(
               fontSize: 25.0,
               fontWeight: FontWeight.bold,
               fontFamily: 'Pacifico',
-              color: Colors.teal),
+              color: Colors.teal[600]),
         ),
       ),
       body: Column(
@@ -87,10 +87,10 @@ class _HomeState extends State<Home> {
                   GButton(
                     icon: Icons.home,
                     text: 'Home',
-                    backgroundColor: Colors.teal,
+                    backgroundColor: Colors.orange[400],
                   ),
                   GButton(
-                    icon: Icons.favorite,
+                    icon: Icons.whatshot,
                     text: 'Hot',
                     backgroundColor: Colors.red,
                   ),

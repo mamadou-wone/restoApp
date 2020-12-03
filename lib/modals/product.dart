@@ -31,17 +31,20 @@ class ProductModel extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
-                  height: 180,
-                  width: double.infinity,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                GestureDetector(
+                  child: Container(
+                    height: 180,
+                    width: double.infinity,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Image.network(
+                      this.firstImage,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: Image.network(
-                    this.firstImage,
-                    fit: BoxFit.cover,
-                  ),
+                  onTap: this.onTap,
                 ),
               ],
             )

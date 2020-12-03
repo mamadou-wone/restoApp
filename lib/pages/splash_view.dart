@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:restoapp/home.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-class SlashView extends StatelessWidget {
+class SplashView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new SplashScreen(

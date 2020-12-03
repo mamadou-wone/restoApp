@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,8 @@ class _ProductPageState extends State<ProductPage> {
             itemBuilder: (context, index) {
               DocumentSnapshot product = snapshot.data.docs[index];
               return ProductModel(
+                name: product['name'],
+                price: product['price'],
                 firstImage: product['firstImage'],
                 onTap: () {
                   Navigator.of(context).push(
@@ -83,6 +86,80 @@ class _ProductPageState extends State<ProductPage> {
                                             );
                                           },
                                         ).toList(),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SliverAppBar(
+                                  automaticallyImplyLeading: false,
+                                  elevation: 10.0,
+                                  backgroundColor: Colors.white,
+                                  expandedHeight: 600,
+                                  flexibleSpace: FlexibleSpaceBar(
+                                    background: Container(
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          ListTile(
+                                            title: Text(
+                                              product['name'],
+                                              style: TextStyle(
+                                                  fontFamily: 'Pacifico',
+                                                  color: Colors.orange[400],
+                                                  fontSize: 25.0,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            trailing: SizedBox(
+                                              // width: 250.0,
+                                              child: ScaleAnimatedTextKit(
+                                                  duration:
+                                                      Duration(seconds: 3),
+                                                  onTap: () {
+                                                    print("Tap Event");
+                                                  },
+                                                  text: [
+                                                    product['price'],
+                                                    "CFA",
+                                                  ],
+                                                  textStyle: TextStyle(
+                                                      color: Colors.orange[400],
+                                                      fontSize: 25.0,
+                                                      fontFamily: "Pirata"),
+                                                  textAlign: TextAlign.start,
+                                                  alignment: AlignmentDirectional
+                                                      .topStart // or Alignment.topLeft
+                                                  ),
+                                            ),
+                                          ),
+                                          SizedBox(height: 20),
+                                          Container(
+                                            child: SizedBox(
+                                              width: 250.0,
+                                              child: ColorizeAnimatedTextKit(
+                                                  speed: Duration(seconds: 5),
+                                                  onTap: () {
+                                                    print("Tap Event");
+                                                  },
+                                                  text: [
+                                                    product['description']
+                                                  ],
+                                                  textStyle: TextStyle(
+                                                      fontSize: 30.0,
+                                                      fontFamily: "Pirata"),
+                                                  colors: [
+                                                    Colors.purple,
+                                                    Colors.blue,
+                                                    Colors.yellow,
+                                                    Colors.red,
+                                                  ],
+                                                  textAlign: TextAlign.start,
+                                                  alignment: AlignmentDirectional
+                                                      .topStart // or Alignment.topLeft
+                                                  ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),

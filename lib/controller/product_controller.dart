@@ -4,6 +4,9 @@ import 'package:restoapp/modals/product_list.dart';
 
 class ProductController extends GetxController {
   var products = List<Product>().obs;
+
+  var test = List<Product>().obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -12,6 +15,7 @@ class ProductController extends GetxController {
 
   void fetchProducts() async {
     await Future.delayed(Duration(seconds: 1));
+    test.value = Product(name: "Test") as List<Product>;
     FirebaseFirestore.instance.collection('resto').get().then(
       (querySnapshot) {
         querySnapshot.docs.forEach(

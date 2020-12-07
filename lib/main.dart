@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:restoapp/pages/splash_view.dart';
-
+// 
 void main() async {
   WidgetsFlutterBinding();
   await Firebase.initializeApp();

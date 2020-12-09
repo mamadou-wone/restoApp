@@ -4,6 +4,7 @@ import 'package:restoapp/pages/splash_view.dart';
 
 // 07/12/2020
 // 08/12/2020
+// 09/12/2020
 void main() async {
   WidgetsFlutterBinding();
   await Firebase.initializeApp();

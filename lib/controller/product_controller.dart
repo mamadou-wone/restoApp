@@ -15,23 +15,23 @@ class ProductController extends GetxController {
 
   void fetchProducts() async {
     await Future.delayed(Duration(seconds: 1));
-    test.value = Product(name: "Test") as List<Product>;
-    FirebaseFirestore.instance.collection('resto').get().then(
-      (querySnapshot) {
-        querySnapshot.docs.forEach(
-          (result) {
-            products.add(
-              Product(
-                  name: result['name'],
-                  price: result['price'],
-                  category: result['category'],
-                  firstImage: result['firstImage'],
-                  secondImage: result['secondImage'],
-                  description: result['description']),
-            );
-          },
-        );
-      },
-    );
+    // test.value = Product(name: "Test") as List<Product>;
+    // FirebaseFirestore.instance.collection('resto').get().then(
+    //   (querySnapshot) {
+    //     querySnapshot.docs.forEach(
+    //       (result) {
+    //         products.add(
+    //           Product(
+    //               name: result['name'],
+    //               price: result['price'],
+    //               category: result['category'],
+    //               firstImage: result['firstImage'],
+    //               secondImage: result['secondImage'],
+    //               description: result['description']),
+    //         );
+    //       },
+    //     );
+    //   },
+    // );
   }
 }

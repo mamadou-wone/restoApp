@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:restoapp/pages/favories.dart';
-import 'package:restoapp/pages/product_page.dart';
+import 'package:restoapp/pages/product_screen.dart';
 import 'package:restoapp/pages/setting_screen.dart';
 
 class Home extends StatefulWidget {
@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
         pageChanged(index);
       },
       children: <Widget>[
-        ProductPage(),
+        ProductScreen(),
         Favories(),
         SettingScreen(),
       ],

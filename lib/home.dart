@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:restoapp/pages/favories.dart';
+
 import 'package:restoapp/pages/product_screen.dart';
 import 'package:restoapp/pages/setting_screen.dart';
 
@@ -25,7 +25,7 @@ class _HomeState extends State<Home> {
       },
       children: <Widget>[
         ProductScreen(),
-        Favories(),
+        // ProductPage(),
         SettingScreen(),
       ],
     );
@@ -89,11 +89,11 @@ class _HomeState extends State<Home> {
                     text: 'Home',
                     backgroundColor: Colors.orange[400],
                   ),
-                  GButton(
-                    icon: Icons.whatshot,
-                    text: 'Hot',
-                    backgroundColor: Colors.red,
-                  ),
+                  // GButton(
+                  //   icon: Icons.whatshot,
+                  //   text: 'Hot',
+                  //   backgroundColor: Colors.red,
+                  // ),
                   GButton(
                     icon: Icons.settings,
                     text: 'Settings',

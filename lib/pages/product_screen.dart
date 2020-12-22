@@ -8,6 +8,7 @@ import 'package:restoapp/util/categorie_item.dart';
 import 'package:restoapp/util/restaurants.dart';
 import 'package:restoapp/util/search_card.dart';
 import 'package:restoapp/util/slide_item.dart';
+import 'package:restoapp/util/trending_item.dart';
 
 class ProductScreen extends StatefulWidget {
   @override
@@ -31,7 +32,7 @@ class _ProductScreenState extends State<ProductScreen> {
         child: ListView(
           children: <Widget>[
             SizedBox(height: 20.0),
-            buildCategoryRow('Trending Restaurants', context),
+            buildCategoryRow('Tendances Restaurant', context),
             // SizedBox(height: 10.0),
             // buildRestoList(context),
             SizedBox(height: 10.0),
@@ -56,44 +57,50 @@ class _ProductScreenState extends State<ProductScreen> {
             fontWeight: FontWeight.w800,
           ),
         ),
-        FlatButton(
-          child: Text(
-            "See all (9)",
-            style: TextStyle(
-              color: Theme.of(context).accentColor,
-            ),
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return Trending();
-                },
-              ),
-            );
-          },
-        ),
+        // FlatButton(
+        //   child: Text(
+        //     "See all (9)",
+        //     style: TextStyle(
+        //       color: Theme.of(context).accentColor,
+        //     ),
+        //   ),
+        //   onPressed: () {
+        //     Navigator.push(
+        //       context,
+        //       MaterialPageRoute(
+        //         builder: (BuildContext context) {
+        //           return Trending();
+        //         },
+        //       ),
+        //     );
+        //   },
+        // ),
       ],
     );
   }
 
-  buildSearchBar(BuildContext context) {
-    return PreferredSize(
-      child: Padding(
-        padding: EdgeInsets.only(
-          top: Platform.isAndroid ? 30.0 : 50.0,
-          left: 10.0,
-          right: 10.0,
-        ),
-        child: SearchCard(),
-      ),
-      preferredSize: Size(
-        MediaQuery.of(context).size.width,
-        60.0,
-      ),
-    );
-  }
+  // buildScreen(BuildContext context) {
+  //   final firestoreInstance = FirebaseFirestore.instance;
+  //   return Container(
+  //     child: StreamBuilder<QuerySnapshot>(
+  //         stream: firestoreInstance.collection('resto').snapshots(),
+  //         builder: (context, snapshot) {
+  //           if (snapshot.data == null)
+  //             return Center(child: CircularProgressIndicator());
+  //           return ListView.builder(
+  //             itemCount: snapshot.data.docs.length,
+  //             itemBuilder: (context, index) {
+  //               DocumentSnapshot product = snapshot.data.docs[index];
+  //               return TrendingItem(
+  //                   img: product['firstImage'],
+  //                   title: 'test',
+  //                   address: 'test',
+  //                   rating: 'test');
+  //             },
+  //           );
+  //         }),
+  //   );
+  // }
 
   buildCategoryList(BuildContext context) {
     return Container(
@@ -129,10 +136,43 @@ class _ProductScreenState extends State<ProductScreen> {
           return Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: SlideItem(
-              img: restaurant["img"],
-              title: restaurant["title"],
-              address: restaurant["address"],
+              firstImage: restaurant["img"],
+              name: restaurant["title"],
+              description: restaurant["address"],
               rating: restaurant["rating"],
+              ontap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) {
+                      return Scaffold(
+                        appBar: AppBar(
+                          title: Text(
+                            'BonCoin',
+                            style: TextStyle(
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Pacifico',
+                                color: Colors.teal[600]),
+                          ),
+                          centerTitle: true,
+                          backgroundColor: Colors.orange[400],
+                          automaticallyImplyLeading: true,
+                        ),
+                        backgroundColor: Colors.white,
+                        body: Hero(
+                          tag: restaurant['title'],
+                          child: TrendingItem(
+                            img: restaurant['img'],
+                            address: restaurant['address'],
+                            title: restaurant['title'],
+                            rating: "4.5",
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                );
+              },
             ),
           );
         },
